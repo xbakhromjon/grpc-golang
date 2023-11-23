@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "/product";
+
+message ProductRequest {
+  string name = 1;
+  int32 price = 2;
+}
+
+message ProductReply {
+  string name = 1;
+}
+
+message ProductId {
+  int64 id = 1;
+}
+
+message EmptyReply {
+
+}
+
+message ProductListReply {
+  repeated ProductReply content = 1;
+}
+
+message ProductFilterSpecification {
+  string name = 1;
+}
+
+service Product {
+  rpc Create(ProductRequest) returns (ProductReply){}
+  rpc Delete(ProductId) returns (EmptyReply);
+  rpc GetOne(ProductId) returns (ProductReply);
+  rpc Filter(ProductFilterSpecification) returns (ProductListReply);
+}
+
