@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "/protobuf";
+import "proto/common.proto";
+
+message SignupRequest {
+  string fname = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message SignInRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message TokenReply {
+  string token = 1;
+}
+
+service Auth {
+  rpc Signup(SignupRequest) returns (EmptyReply);
+  rpc SignIn(SignInRequest) returns (TokenReply);
+}

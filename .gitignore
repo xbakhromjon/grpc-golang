@@ -179,5 +179,16 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-/product/product.pb.go
-/product/product_grpc.pb.go
+/internal/product/product.pb.go
+/internal/product/product_grpc.pb.go
+/protobuf/auth.pb.go
+/protobuf/auth_grpc.pb.go
+/cert/client-cert.pem
+/cert/client-csr.pem
+/cert/client-key.pem
+/protobuf/common.pb.go
+/protobuf/product.pb.go
+/protobuf/product_grpc.pb.go
+/cert/server-cert.pem
+/cert/server-csr.pem
+/cert/server-key.pem

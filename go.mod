@@ -3,7 +3,9 @@ module grpc-golang
 go 1.21
 
 require (
+	github.com/go-chi/chi/v5 v5.0.11 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/joho/godotenv v1.5.1 // indirect
 	golang.org/x/net v0.14.0 // indirect
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect

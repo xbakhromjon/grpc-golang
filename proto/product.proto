@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "/protobuf";
+import "proto/common.proto";
+
+message ProductRequest {
+  string name = 1;
+  int32 price = 2;
+}
+
+message ProductReply {
+  string name = 1;
+}
+
+message ProductId {
+  int64 id = 1;
+}
+
+message ProductListReply {
+  repeated ProductReply content = 1;
+}
+
+message ProductFilterSpecification {
+  string name = 1;
+}
+
+message ChatContentRequest  {
+  string content = 1;
+}
+message ChatContentReply  {
+  string content = 1;
+}
+
+
+service Product {
+  rpc Create(ProductRequest) returns (ProductReply);
+  rpc BatchCreate(stream ProductRequest) returns (EmptyReply);
+  rpc Delete(ProductId) returns (EmptyReply);
+  rpc GetOne(ProductId) returns (ProductReply);
+  rpc Filter(ProductFilterSpecification) returns (stream ProductListReply);
+  rpc Chat(stream ChatContentRequest) returns (stream ChatContentReply);
+}
+
